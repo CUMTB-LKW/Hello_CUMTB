@@ -1,0 +1,1933 @@
+//2014年（试卷）
+一、选择题(1-20每题1分,20-30每题2分，共40分)
+1.下列标识符正确的是_____
+    A.’a’                    B.$3.14               C.Integer         D.#3
+2.下列说法不正确的是______
+    A. C语言的所有输入输出是通过函数实现的；
+    B. 所有C语言程序都从main开始执行，但是结束不一定是在main函数中；
+    C. 函数之间可以相互调用；
+    D. 任何文本编辑器都可以作为C源代码的编辑器；
+3.以下定义语句，有错误的是______ 
+A.char c=’\x’;       B. char c=’\0’;       C. char c=’\123’;       D. char c=48
+4. 关于算法的描述，下列说法不正确的是______
+A.算法是利用计算机解决问题的步骤；
+B.算法必须能用计算机实现；
+C.圆面积计算公式是一个算法；
+D.一个问题的算法可以有多个；
+5.关于整形变量和字符变量的描述不正确的是_______
+A.负整数不能赋值给字符变量； 
+B. ‘2’+’1”的结果和’3’内部表示是一样的；
+C.整形变量存储空间比字符变量存储空间大；
+D.字符变量存储的ASCII码值，而整形变量存储的是对应的二进制；
+6.假设变量a,b均为整形，则表达式(a=2,b=2,a>b?a++:b++,a+b)的值是____
+     A.2                   B. 3                  C.5                      D.4
+7.若a=3,b=4,c=5,表达式a||b+c&&b-c的值是______
+   A. 1                    B.  0                C. -3                     D.  5
+8.  对下面程序描述正确的是_____
+      char  ch=’9’;    while(ch)   ch-‘9’;
+       A.循环执行一次；                       B. 是一个无穷循环；
+       C.循环一次也不执行                   D. 程序运行后ch=’0’；
+9.  函数char fun(char ch){return ch--;}，调用fun(‘B’)的结果是______
+       A.    ‘B’            B.  ‘A’               C.    ‘a’            D.    ‘b’
+10. 定义char str[5]={‘1’,’2’,’3’,’4’}，str[4]=str[0]-‘0’,str[0]+str[4]=______
+      A.   ‘1’              B. ‘0’                  C.  ‘2’             D. ‘ \0’
+11. 若char str[]={’1’,’2’,’3’,’\n’,’4’,’5’,’\0’}，则语句printf("%s",str)的结果是____
+    A. 12345               B. 123<换行>45     C   123         D.  123\n45 
+12. int a[3][3]={{1},{2},{3}};则a[0][2]+a[1][1]+a[2][0]=_______
+A.   6                     B. 2                         C.1               D.3
+13. int a[2][4]={{1,2,3,4},{5,6,7,8}};如果按列存储，第5个元素的值是______
+   A.    4                     B. 6                         C. 3              D.5
+14.设char str[]="abcdEfgh ",*p; p=str;下列不能输出字符’E’的是______
+      A.  putchar(str[4])                    B.   printf("%c",*(p+4))   
+C.  putchar(*(p+4))                  D.   putchar(*(str+4))
+15. 设char ch, str[4], *strp;则下列赋值语句正确的是_______
+A.ch="CBA";		B. str="CBA";	   C.strp="CBA";	D. strp={"CBA"};
+16.执行char str[10]=”Ch\0ina”;strlen(str)的值是_____
+    A. 5                   B.2                 C.3                  D.6
+17.有int a[2][3]={1,2,3,4,5,6};int  (*p)[3]; p=a+1,则下列表达式值不是5的是______
+   A.*(*p+1)           B.*(p+1)         C.*(*(a+1)+1)           D.* (*a+4)
+18. 通过while不断读入字符，当读入字母‘#’时结束循环。以下正确的是____ 
+A. while((ch=getchar())!=′#′) printf("%c",ch);  
+B. while(ch=getchar()!=′#′) scanf("%c",&ch);
+C. while(ch=getchar()==′#′) printf("％c",ch); 
+D. while((ch=getchar())!==′#′) scanf("％c",&ch);
+19. 有以下语句，则对a数组元素的引用不正确的是（0≤i≤9）______
+int a[10]={0,1,2,3,4,5,6,7,8,9},*p=a;
+A.a[p-a]       B.   *(&a[i])              C. *(a++)           D. p[i]
+20. 某程序test.c 源文件形式为int main(int argc,char *argv[]){}，命令行输入
+test How are you？，则argc和argv[2]的值分别是_______
+      A.3 和" How "     B. 4和" How "         C.4和"are"              D.3和"are"
+
+21. 以下是求两个正整数的最大公约数的函数gcd()， 下划线处应填入的正确语句为
+int gcd(int m, int n)
+{
+   int r;
+   if(m<n) {r=m;m=n;n=r;}
+   do{______ ;
+         if(r!=0){ m=n;n=r;}
+       } while(r!=0);
+   return n;
+ }
+A) r=m/n	B) r=n		C) r=m		D) r=m%n
+
+22. 以下程序是输出每周工作日的程序，下划线处应填入正取语句是____
+#include <stdio.h>
+int main()
+{  
+enum  Week{sun=7,mon,tue,wed,thu,fri,sat};
+Week day=mon;
+while(day<=sat)
+{
+if(_______)
+printf("Is work day\n");
+day++;
+}
+return 0;
+}
+A) day>=mon                              B) day>=8&&day<=12    
+C) day!=sun|| day!=sat                D) day>=1||day<=5
+
+23. 有如下程序,该程序的输出结果是
+int f(int n)
+{ 
+if(n>=3)
+    return(f(n-2) + f(n-3)); 
+else
+return 1;
+}
+int main()
+{ 
+printf("%d\n",f(5));
+return 0;
+}
+A) 2		B) 3		C) 4		D) 5
+
+24. 以下程序的运行结果是
+#include <stdio.h>
+int main()
+{ 
+int a[3][4]={{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+int (*p) [4],*q;
+p=a+2;q=&a[1][2]
+printf("%d,%d\n"，*(*p+1))，*(q+2));
+return 0;
+}
+A) 编译出错		B) 3,8		C) 10,8		D) 6,5
+
+25. 有如下程序：
+int main()
+{ 
+int k,a[6]={2};
+for(k=1;k<6;k++)
+   a[k]=a[k-1]+1;
+printf(“%d,%d\n”,k,a[5] );
+return 0;
+}
+该程序执行后的输出结果是_____
+A) 5,2		B) 6,2		C) 6,7		D) 6,6
+
+26. 以下语句的输出结果_______
+　　int a=-1,b=4,k; 　　
+k=(a++<0)&&!(--b<=0);　　
+printf("%d,%d,%d\n",k,a,b); 　　
+A. 1,0,4 　　B. 1,0,3 　　C. 0,0,3 　　D. 0,0,4
+
+27. 有以下程序
+int Ex(char *s,char t)
+{ int k;
+while(*s)
+{if（*s= =t）
+{  s++;
+k++;}
+s++;
+}}
+int main( )
+{    char *p,str[10]="abcdafca",c='a';
+      p=str;p++;
+printf("%d＼n",Ex(p,c));
+}
+程序运行后的输出结果是  
+A）1             B）2       C）0       D）3
+  
+28. 若执行下述程序时，若从键盘输入6和8时，结果为
+int main( )
+{int a,b,*s;
+scanf("%d%d",&a,&b);
+   s=&b;
+if（a>b）s=&a;
+printf（"%d",*s）;
+}
+输出结果是___
+A. 6      B.8     C.0     D.48
+
+29.执行以下程序
+void fun(char *s)
+{
+	while(*s)
+	{
+	if(*s%2==0)
+ printf("%c",*s-32);
+	 s++;
+	}
+}
+int main()
+{	
+    char str1[10]="abcdefgh";
+    fun(str1);
+}
+结果是_____
+A. abcd    B.aceg     C.bdfh    D.ACEG
+30.以下程序
+int main()
+{  FILE *fp;
+   fp=fopen("test.txt","a+");
+   fwrite("1234567890",2,1,fp);
+   fclose(fp);
+}
+ 文件test.txt原来的内容是hello，则程序运行以后，文件内容是：
+A.hellohello     B.1234567890    C.1234     D.hello12
+二、程序填空题（共20分）
+1. 下列程序实现对数组元素输入值，程序中有两个错误，写出错误语句的标号，并改正：
+1   int main()
+2    {
+3          int a[5];
+4          int i;
+5         for(i=0;i<=5;i++){
+6                scanf("%d",a[i]);
+7         }
+8  }
+【1】：第______行出错，改正为：______________
+【2】：第______行出错，改正为：______________
+2. 下列程序完成的功能是：统计一个字符串中单词的个数；请将程序补充完整。
+int main(int argc, char* argv[])
+{	
+    char str[100];
+    int i,num,word;
+    i=0;num=0;
+    gets(str);
+   while(【3】)        
+    {
+          if(【4】)   word=0;  
+	  else if(word==0)
+	  {
+                word=1;
+num++;
+	  }
+            i++;
+     }
+ return 0;
+}
+3. 下列程序完成功能是：统计100-200之间的素数的个数，请将程序补充完整。
+int main()
+{	
+    int flag,n=0;
+for(int i=100;i<=200;i++)
+	{ flag=1;
+	   for(int k=2;k<sqrt(i);k++)
+		   if(【5】) 
+		   {      flag=0;
+	                         break;
+		   }
+                     if(【6】)  
+n++;
+   	}}
+
+4. 下面是选择法排序的函数，将程序补充完整
+void sort(int arr[],int n)
+{
+     int i,j,k,t;
+     for(i=0;i<n-1;i++)
+{
+    【7】
+    for(j=i+1;j<n;j++)
+    if( 【8】 )  k=j;
+          t=arr[k];arr[k]=arr[i];arr[i]=t;
+}
+}
+5. 下面程序功能是：将某字符串中的一段拷贝到另一个字符串中，请将程序补充完整。
+void copyString(char str1[],char str2[],int m,int n)
+{
+     char *p1,*p2;
+     int i=0;
+     p1=str1+m;
+     【9】
+     for(;p1<=p2;p1++)
+str[i++]=*p1; 
+    【10】;
+}
+
+三、读程序，写出运行结果（每题5分，共20分）
+1. 根据程序的输入，写出程序运行结果
+#include<stdio.h>
+int main(int argc, char* argv[])
+{    char str[10],*p,ch;
+int n;
+printf("please input the string:");
+         gets(str);
+          n=strlen(str);
+          p=str+n/2;
+while(p>=str)
+	   putchar(*p--);
+return 0;
+}
+键盘输入：123456789<回车>:
+2. 读下列程序，写出运行结果
+void  fun1(int b[], int n)
+{
+	int i,j,t;
+	for(i=0;i<n-1;i++)
+		for(j=0;j<n-i-1;j++)
+			if(b[j]<b[j+1])
+			{ t=b[j];  b[j]=b[j+1];  b[j+1]=t; }
+}
+
+int fun2(int b[],int k1,int k2,int k)
+{
+int m;
+	m=(k1+k2)/2;
+	while(k1<=k2 && b[m]!=k)
+	{
+		if(k>b[m])  k2=m;
+		           else  k1=m;
+		   m=(k1+k2)/2;
+	}
+	if(b[m]==k)   return 1;
+	                else  return 0;
+}
+
+int main()
+{
+	int i,a[]={-2,1,10,5,4,12,8,6,7,11};
+	fun1(a,10);
+              for(i=0;i<10;i++) printf("%4d",a[i]);
+	printf("\n");
+if(fun2(a,0,10,8)) printf("OK!");
+}
+3. 写出运行结果
+int main()
+{	char str[ ]="I  Love  The  C  Programming";
+	char w[10];
+	int i,j=0,num=0,flag=0;
+	puts(str);
+          for(i=0;str[i]!='\0';i++)
+	  if(str[i]>='a' && str[i]<='z'&& str[i]!=’e’) 
+str[i]=str[i]-32;
+	printf("\n");
+	puts(str);
+}
+4. 读程序，写结果
+struct student
+{
+	char name[20];
+	char num[10];
+	float score[3];
+};
+struct student *fun(struct student *p)
+{
+  int i,j;
+struct student *q
+  for(i=0;i<3;i++)
+	  if(p->score[j]<60)   q=p;
+	       else q=NULL;
+return q;}
+int main()
+{ int i,j;
+  struct student *p;
+struct student stu[3]={"Zhang","001",67,78,89,
+"Wang","002",90,87,56,"Huang","003",93,59,57};
+  for(i=0;i<3;i++)
+{
+      p=fun(&stu[i]);
+if(p!=NULL)
+{
+printf("%s %s ",p->name,p->num);
+for(j=0;j<3;j++)
+	printf("%6.1f",p->score[j]);
+         printf("\n");
+}
+}
+}
+四．编程题（第一题8分，第二题12分，共20分）
+1.	编写程序实现：在一个字符串某个位置插入另一个字符串；
+要求：（1）字符串和插入位置都由键盘输入；
+             （2）插入前和插入后的字符串都要输出；
+如：主串："123456789"  位置：6  插入串："abcdef"
+插入后："12345abcdef6789"
+2.某文件存储了若干名同学的学生及成绩信息。编程实现：
+（1）输入学号，输出该同学的各科成绩；
+（2）输出某门课程所有同学的成绩，并统计不及格人数；
+--------------------------------------------------------------------------------------------------------------------------
+//2014年（答案）
+一、选择题(1-20每题1分，21-30每题2分，共40分)
+CBAC(A/B)    CABAC     BDC(No)C    BBACC    DBB(No)C     BBB(No)D
+二、填空题（每题2分，共20分）
+【1】：第___5___行出错，改正为：for(i=0;i<5;i++)     程序第3行 in a[5]改为int a[5]
+【2】：第___6___行出错，改正为：_&a[i] ____            第7行 删右花括号 }
+【3】：str[i]!='\0' or str[i] != 0
+【4】：str[i]=='  '
+【5】：i%k==0
+【6】：flag  or  flag==1  or  i>sqrt(i)
+【7】：k=i;
+【8】：arr[j]<arr[k] or arr[j]<=arr[k] or arr[j]>arr[k] or arr[j]>=arr[k]
+【9】：p2=str1+n;
+【10】：str2[i]='\0' or str2[i]=0
+
+三、读程序写结果（每题5分，共20分）
+（1）54321
+（2）先对数组由大到小排序，然后进行折半查找；
+12 11 10 8 7 6 5 4 1-2  
+OK!
+（3）I Love The C Programming   
+I LOVe The C PROGRAMMING
+（4）（输出不及格成绩的学生姓名、学号和成绩）
+Wang  002 90.0 87.0 56.0
+Huang 003 93.0 59.0  57.0
+    
+四、编程题（第1题8分，第2题12分，共20分，答案仅供参考）
+1.
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char str1[50],str2[10],str[100];
+	char *p1,*p2;-----------------------------------2
+	int k,i=0;
+	printf("In the string 1:");
+	gets(str1);
+	printf("In the Local k:");
+	scanf("%d",&k);
+	getchar();
+	printf("In the string 2:");
+	gets(str2);------------------------------------2
+	for(p1=str1;p1<=str1+k;p1++,i++)
+		str[i]=*p1;--------------------------------2
+	str[i]='\0';
+	strcat(str,str2);
+	strcat(str,p1);----------------------------------2
+	puts(str);
+	printf("\n");
+	system("pause");
+	return 0;
+}
+
+2．略
+-----------------------------------------------------------------------------------------------------------------------------------
+//2015年（试卷）
+一、选择题(1-20每题1分,20-30每题2分，共40分)
+1. “C语言函数可以嵌套调用，也可以递归调用”，上述说法（）。
+A. 正确 		B. 错误
+2. C语言中除了main函数，其他的函数不可作为单独文件形式存在，该说法（）。
+A. 正确 		B. 错误
+
+3. ①C语言程序必须经过编译连接才可以运行；②用C语言编写的源程序不能直接在计算机上运行；对上述两种说法正确的是（）。
+A. ①正确		B. ②正确	C. ①②都正确		D. ①②都不正确
+4. 下列不能定义的用户标识符是（）。
+A. Hename           B.  _01B             C. x38B_int            D.  sizeof 
+
+5. 下列选项中，不能作为合法常量的是（）。
+    A. 1.234e04	     B. 1.234e0.4         C. 1.234e+4          D. 1.234e0 
+6. 若有定义：double a = 22; int i = 0, k = 18; 则下述语句中选项（）不符合C语言规定。
+A. a = a++, i++;		B. i = (a+k) <= (i+k);
+C. i = a%11;			D. i = !a;
+
+7. 若a为数值类型，则表达式(a==1) || (a!=1)的值为（）。
+A. 1 		B. 0 		C. 2 		D. 不能确定
+8. if语句的基本形式是：if(表达式) 语句，以下关于“表达式”值的叙述中正确的选项是（）。 
+A. 必须是逻辑值 	B. 必须是整数值 
+C. 必须是正数	D. 可以是任意合法的数值
+
+9. switch语句中，switch(表达式){…}，以下关于“表达式”值的叙述中正确的选项是（）。
+A. 必须是逻辑值 	B. 必须是整数值 
+C. 必须是正数	D. 可以是任意合法的数值
+
+10. 有以下程序
+#include <stdio.h>
+int main()
+{  int x = 11;
+   printf(“%d\n”, ++x);
+   return 0;
+}
+程序运行后的输出结果为：
+A. 10  	B.11		C. 12		D. 13
+
+11. 若i是int类型的变量，有以下for语句
+  for(i=0; i=1; i++) printf(“Hello\n”);
+下面关于语句执行情况的叙述中正确的是（）。
+A. 循环体执行0次     	B. 循环体执行1次
+C. 循环体执行2次		D. 构成无限循环
+
+12. 设有定义 double a[10], *p=a; 以下能给数组a中，下标为4的元素读入数据的正确语句是（）。
+A. scanf(‘%f”, &a[4]);		B. scanf(“%lf”, a[4]);
+C. scanf(“%lf”, p+4);		D. scanf(“%lf”, *(p+4));
+
+13. 有以下程序段
+#include <stdio.h>
+int main()
+{ ……
+       while(getchar() != ‘\n’);
+ ……
+}
+以下叙述正确的是（）。
+A. 此while语句构成无限循环
+B. getchar()不能出现在while语句的条件表达式中
+C. 当执行此while语句时，只有按回车键程序才能终止循环的执行
+D. 当执行此while语句时，按任意键程序就能继续执行
+
+14. 若有定义语句 int a[3][10], (*p)[3], *q; 则以下赋值语句正确的是（）。
+A. p = a;		B. q = a;		C. q = a[0];		D. p = a[0]; 
+
+15. 下列叙述中不正确的是（）。
+A. 在C程序中，逗号运算符的优先级最低 
+B. 在C程序中，Apa和apa是两个不同的变量
+C. 若a和b类型相同，在计算了赋值表达式a=b后b中的值将放入a中，而b中的值不变
+D. 当从键盘输入数据时，对于整型变量只能输入整型数值，对于实型变量只能输入实型数值
+
+
+16. 若有条件表达式 (exp)?a++:b--,则以下表达式中能完全等价于表达式(exp)的是（）。　　A. (exp==0) 		B. (exp!=0)	 C. (exp==1) 		D. (exp!=1)
+
+17. 以下不正确的定义语句是（）。
+A. double x[5] = {1.0, 2.0, 3.0, 4.0, 5.0};		B. int a[5] = {0, 1, 3, 4, 7, 9};
+C. char c[] = {‘a’, ‘s’, ‘c’, ‘e’, ‘n’, ‘d’};			D. char c[] = “ascend”;
+
+18. 设有以下程序段
+  int x=0, s=0;
+  while(!x!=0) s += ++x;
+程序段运行后，s的值为（）。
+A. 0		B. 1		C. 程序中的控制表达式非法	D. 循环执行无限次
+
+19. 有定义语句 char s[15] = “Hello”， 则执行sizeof(s)和strlen(s)的结果是（）。
+A. 15, 15 		B. 5, 5 		C. 15, 5		D. 5, 15
+
+20. 若有以下说明和定义
+  union dt{
+int a; 
+char c;
+double x;
+} data;
+则下述叙述中错误的是（）。
+A. data的每个成员起始地址都相同
+B. 变量data所占内存字节数与成员x所占字节数相同
+C. 程序段：data.a = 1; printf(“%f”, data.x); 该程序段的输出结果为1.000000
+D. data可以作为函数的实参
+
+21. 有以下程序
+  #include <stdio.h>
+  int main(){
+FILE *fp;
+int k, n, a[6]={1,2,3,4,5,6};
+fp = fopen(“data”, “w”);
+fprintf(fp, “%d%d%d\n”, a[0], a[1], a[2]);
+fprintf(fp, “%d%d%d\n”, a[3], a[4], a[5]);
+fclose(fp);
+fp = fopen(“data”, “r”);
+fscanf(fp, “%d%d”, &k, &n);
+printf(“%d%d\n”, k, n);
+fclose(fp);
+return 0;
+}
+则程序运行后的输出结果是（）。
+A. 12		B. 14		C. 1234		D. 123456
+
+
+22. 有以下程序
+  #include <stdio.h>
+int main()
+{
+  int s;
+  scanf(“%d”, &s);
+  while(s>0){
+    switch(s){
+      case 1: printf(“%d”, s+5);
+      case 2: printf(“%d”, s+4); break;
+      case 3: printf(“%d”, s+3);
+      default: printf(“%d”, s+1); break;
+    }
+    scanf(“%d”, &s);
+  }
+}
+程序运行时，若输入1 2 3 4 5 0<回车>，则输出结果是（）。
+A. 6566456		B. 66656		C. 66666		D. 6666656
+
+23. 有以下程序：
+  #include <stdio.h>
+int main()
+{
+  char s[] = “0x12yz\08b123fz”;
+  int i, count=0;
+  for(i=0; s[i] != 0; i++)
+    if(s[i]>=’0’ && s[i]<=’9’) count++;
+  printf(“%d\n”, count);
+  return 0;
+}
+程序运行后的输出结果是（）。
+A. 0		B. 3		C. 7 		D. 8
+
+24. 有以下程序段
+  int i, n;
+  for(i=0; i<8; i++)
+  {
+n = rand()%5;  	//rand() 随机数生成函数，随机产生一个整数
+switch(n){
+  case 1: 
+  case 3: printf(“%d\n”, n); break;
+  case 2:
+  case 4: printf(“%d\n”, n); break;
+  case 0: exit(0);
+}
+printf(“%d\n”, n); 
+  }
+以下关于程序段执行情况的叙述，正确的是（）。
+A. for循环语句固定执行8次
+B. 当产生的随机数为4时结束循环操作
+C. 当产生的随机数为1和2时结束循环操作
+D. 当产生的随机数为0或5的倍数时结束循环操作
+
+25. 有以下程序
+  void func(char *s, char *ss, int n1, int n2)
+  {
+int i, j;
+for(i=n1, j=0; i<n1+n2 && s[i] != 0; i++, j++)  ss[j] = s[i];
+ss[j] = 0;
+  }
+  int main()
+  {
+     char s1[20]=”Hello World”, s2[20];
+     func(s1, s2, 6, 3);
+     printf(“%s\n”, s2);
+     return 0;
+  }
+以上程序执行后，运行结果是（）。
+A. Hello		B. World 		C. Wor		D. llo
+
+26. 有以下程序
+#include <stdio.h>
+int main()
+{
+int x=1, y=0;
+if(!x) 
+  y++;
+else if(x==0)
+  if(x)
+    y += 2;
+  else
+    y += 3;
+printf(“%d\n”, y);
+return 0;
+  }
+程序运行后的输出结果是（）。
+A. 3		B. 2 		C. 1 		D. 0
+
+27. 有以下程序，当程序运行时输入 asd  msd  xx  12yz，则输出是（）。
+  #include <stdio.h>
+  void func(char *str)
+  {
+int i, j=0;
+for(i=0; str[i] != ‘\0’; i++)
+  if(str[i] != ‘ ‘) //如果str[i]不为空格
+    str[j++] = str[i];
+str[j] = ‘\0’;
+  }
+  int main()
+  {
+char s[80];
+int n;
+gets(s);
+func(s);
+puts(s);
+return 0;
+  }
+A. asdmsdxx12yz 	B. asd  msd  xx  12yz 	  C. asd 		D. 12yz
+
+28. 有以下程序
+  #include <stdio.h>
+int func(int n)
+  {
+if(n == 1) return 1;
+return n+func(n-1);
+  }
+  int main()
+  {
+int x = 10;
+x = func(x);
+printf(“%d\n”, x);
+return 0;
+  }
+程序的运行结果是（）。
+A. 55 	B. 45 		C. 65 		D. 15
+
+29. 有以下程序
+  #include <stdio.h>
+  void func(int *p, int n1, int n2)
+  {
+int i, j, t;
+i = n1; j = n2;
+while(i<j){
+  t = *(p+i);
+  *(p+i) = *(p+j);
+  *(p+j) = t;
+  i++;
+  j--;
+}
+  }
+  int main()
+  {
+int a[] = {1,2,3,4,5,6,7,8,9,0}, i;
+func(a, 0, 3); func(a, 4, 9); func(a, 0, 9);
+for(i=0; i<10; i++)
+  printf(“%d”, a[i]);
+printf(“\n”);
+return 0;
+  }
+该程序的运行结果是（）。
+A. 0123456789 	B. 0987654321	C. 4321098765 	D. 5678901234
+
+30. 以下程序的运行结果是
+#include <stdio.h>
+void func(int *n)
+{
+static int m=2;
+*n *= m-1;
+m += 2;
+}
+int main()
+{
+int x=1, i;
+for(i=0; i<3; i++)
+{
+  func(&x);
+}
+printf("%d\n", x);
+}
+A) 8		B) 10		C) 11		D) 15
+
+二、程序填空题（每空2分，共20分）
+1.  以下是求阶乘的函数，请补充完整
+int fac(int n)
+{
+	int f = 1;
+	if (【1】)
+	    f = 1;
+	else
+	    【2】;
+	return f;
+}
+
+2 下列程序是统计字符串中单词的个数，请补充完整；
+int main()
+{	
+    char str[100];
+        int i=0,num=0,word=0;
+        gets(str);
+        while(str[i]!=’\0’)        
+      {
+          if(【3】)  
+	  else if(word==0)
+	  {
+                      【4】; 
+【5】;
+	  }
+          i++;
+       }
+ return 0;
+}
+
+3. 向某有序数组中合适位置插入新元素后仍保持有序
+void sort(int *p, int n);  ////排序函数，假设已有完整定义
+int main()
+{
+	int a[20],b;
+	int i, j;
+	for (i = 0; i < 10; i++)
+		scanf ("%d", &a[i]);
+              sort(a, 10); 
+	scanf("%d", &b); //待插入元素
+	i = 0;
+	while (【6】)
+		i++;
+	j = 9;
+	while (【7】)
+	{
+		a[j + 1] = a[j];
+		j--;
+	}
+	【8】;
+	return 0;
+}
+
+4. 下面程序的功能是：将某字符串中的一段拷贝到另一个字符串中，请将程序补充完整
+void copyString(char str1[], char str2[], int m, int n)
+{
+       char *p1,*p2;
+       int i=0;
+       p1=str2+m-1;
+       p2=str2+n-1;
+       for(;【9】;p1++)
+【10】; 
+      str1[i]=’\0’;
+}
+三、读程序，写出运行结果（每题5分，共20分）
+1. #include <stdio.h>
+int main()
+{
+	int f1, f2,f3;
+	f1 = f2 = 1;
+	for (int i = 1; i <= 6; i++)
+	{
+		printf("%4d%4d", f1, f2);
+		if (i % 2 == 0) printf("\n");
+		f1 = f1 + f2;
+		f2 = f2 + f1;
+	}
+             return 0;
+}
+
+2. #include <stdio.h>
+void fun(char str[],char ch)
+{
+	int i, j;
+	for (i = j = 0; str[i] != '\0';i++)
+	if (str[i] != ch)
+		str[j++] = str[i];
+	str[j] = '\0';
+}
+int main()
+{
+	char str[] = "I_Love_The_C_Program";
+	char ch = '_';
+	fun(str, ch);
+	puts(str);
+	return 0;
+}
+
+3. #include <stdio.h>
+ void fun(int *arr,int n)
+{
+	int *p, t, *pi, *pj, m = (n - 1) / 2;
+	pi = arr; pj = arr + n - 1; p = arr + m;
+	for(;pi <= p; pi++, pj--;)
+	{
+		t = *pi; *pi = *pj; *pj = t;
+	}
+}
+int main()
+{
+	int a[10] = { 3, 7, 9, 11, 0, 6, 7, 5, 4, 2 };
+	fun(a, 10);
+	for ( int k = 0; k < 10; k++)
+		printf("%4d", a[k]);
+		return 0;
+}
+
+4. #include <stdio.h>
+struct student
+{
+	char name[20];
+	char num[10];
+	float score[3];
+};
+struct student *fun(struct student *p)
+{
+          int i,j;
+struct student *q=NULL;
+  for(i=0;i<3;i++)
+	  if(p->score[j]<60)
+ {  q=p; 	break; }
+return q;
+}
+int main()
+{ 
+int i,j;
+        struct student *p;
+struct student stu[3]={"Zhang","001",67,58,89,
+"Wang","002",90,87,66,"Huang","003",93,59,57};
+        for(i=0;i<3;i++)
+{
+              p=fun(&stu[i]);
+if(p!=NULL)
+{
+printf("%s %s ",p->name,p->num);
+for(j=0;j<3;j++)
+	            printf("%6.1f",p->score[j]);
+                    printf("\n");
+}
+}
+}
+四．编程题（每题10分，共20分）
+
+1.	编写程序实现：输入一个整数n，将n按十进制位分解为各乘式的累加和，格式参见示例，不输出系数为0的乘式。如：
+输入：10040	输出：1*1000+4*10
+输入：234      输出：2*100+3*10+4*1
+
+2. 编写一个函数实现如下功能：已知n个学生成绩（用数组表示），统计大于平均分的人数。建议函数原型如下：   int count(float score[ ], int n);
+------------------------------------------------------------------------------------------------------------------------------------------------
+//2015年（答案）
+一、选择题（1-20每题1分，21-30每题2分，共40分）
+1-5 ABCDB		6-10 CADBC		11-15 DCCCD
+16-20 BBACC		21-25 DABDC		26-30 DAADD
+
+二、程序填空题（每空2分，共20分）
+1. n == 1 		2. f = fac(n - 1)*n;		3. str[i] == ‘  ‘ 	4. word=1; 		5. num++;
+6. a[i] < b 	7. j>=i   				8. a[i] = b;		9. p1<=p2		10. str1[i++]=*p1;
+注：4-5顺序可换
+三、读程序，写出运行结果（每题5分，共20分）
+1.    1    1    2    3
+5    8   13   21
+34   55  89  144
+2.    ILoveTheCProgram
+3.  2   4   5  7  6  0  11  9   7  3
+4.  Zhang  001  67.0  58.0  89.0
+   Huang  003  93.0  59.0  57.0
+
+四、编程题（每题10分，共20分）
+1. #include <stdio.h>
+  #include <math.h>
+  int main()
+  {
+int n, i=0, j, a[10];
+scanf(“%d”, &n);
+while(n){	
+ a[i++] = n%10;
+ n = n/10;
+}//分解各位上的数字，任意位数的整数皆可
+//以下为任意位数整数的乘式分解
+printf(“%d*%.0f”, a[i-1], pow(10, i-1)); 	//最高位对应的乘式
+for(j=i-2;j>=0; j--)	//最高位以下的乘式，系数为0的乘式不输出
+  if(a[j] != 0) printf(“+%d*%.0f”, a[i], pow(10, j));
+printf(“\n”);
+return 0;
+  }	
+2. int count(float score[], int n)
+  {
+int cnt=0, i;
+float ave=0;
+for(i=0; i<n; i++) ave+= score[i];
+ave = ave/n;
+for(i=0; i<n; i++)
+  if(score[i] > ave) cnt++;
+return cnt;
+  }
+  -----------------------------------------------------------------------------------------------------------------------------------
+//2016年（试卷）
+一、选择题(1-20每题1分，20-30每题2分，共40分)
+1. 下列叙述中正确的是（）
+A. 在C语言程序中，main函数必须放在其他函数的最前面；
+B. 每个后缀（扩展名）为.c的C语言程序都可以单独编译；
+C. 在C语言程序中，只有包含main函数的文件才可以单独编译；
+D. 每个后缀（扩展名）为.c的C语言程序都必须包含一个main函数
+
+2. 以下选选项中哪一个是合法的常量（其中表示空格）（）
+A. 357		B. 0X7b		C. 1.2e0.45		D. 2.75E
+
+3. 以下选项中哪一个可以作为用户定义的变量来使用（）
+A. int		B. _08		C. xy.ch		D.  x4#
+
+4. 下列选项中哪一个实现了程序设计的模块化（）
+A. 三种程序设计的基本结构
+B. 丰富的数据类型
+C. 函数
+D. 定义符号常量和外部变量
+
+5. 下列选项中关于常量以及符号常量的叙述中错误的是（）
+A. 常量在程序运行过程中的值不能发生变化
+B. 符号常量是用预编译指令#define定义的标识符
+C. 定义符号常量必须指定其数据类型
+D. 用预编译指令#define定义的符号没有数据类型之分
+
+6. 若有定义：double a = 32; int i = 0, k = 8; 则下述不符合C语言规范的选项是（）
+A. i = i++, a++;		B. i = (a+k) <= (i+k);
+C. i = a%7;			D. i = !a;
+
+7. switch语句的一般形式为：switch(表达式){…}，以下关于“表达式”值的叙述中正确的选项是（）
+A. 必须是逻辑值true或false  	B. 必须是字符型的值 
+C. 必须是整数值			D. 可以是任意合法的数值
+
+8. for语句实现循环的基本形式为：for(表达式1; 表达式2; 表达式3){ 循环体}，下面关于表达式2的叙述中正确的是（）
+A. 必须是条件表达式		B. 必须是逻辑表达式
+C. 表达式2是不可或缺的	D. 可以是任意表达式也可以没有
+
+9. 若a为数值类型，则表达式(a == 1) || (a != 1)的值为（）
+A. 1 		B. 0 		C. 2 		D. 不能确定
+
+10. 有定义语句 char s[20] = “China”， 则执行sizeof(s)和strlen(s)的结果是（）。
+A. 20, 20 		B. 5, 5 		C. 20, 5		D. 5, 20
+
+11.  下列表达式的值为“假”的选项是（）
+A. (2 + 7)  >  8		B. (3 == 4) >2 
+C. 2 > 3 || 7			D. 3 > 2 && 7
+
+12. 有定义语句 int m; 关于如下for语句的叙述中正确的是（）
+  for(m = 8; m = 7; m++) printf(“China\n”);
+A. 循环体执行0次     	B. 循环体执行1次
+C. 循环体执行15次		D. 构成无限循环
+
+13. 有以下程序段
+#include <stdio.h>
+int main()
+{ ……
+       while(getchar() != ‘\0’);
+ ……
+}
+以下叙述正确的是（）。
+A. 此while语句构成无限循环
+B. getchar()不能出现在while语句的条件表达式中
+C. 当执行此while语句时，只有按回车键程序才能终止循环的执行
+D. 当执行此while语句时，只有按数字0键程序才能终止循环的执行
+
+14. 若有定义语句 int a[3][4], (*p)[3], *q; 则以下正确的赋值语句是（）
+A. q = a;		B. p = a;		C. q = a[0];		D. p = a[0]; 
+
+15. 设p是指针变量，语句p = NULL; 等价于（）
+A. p = “”;	B. p = “0”;	C. p = 0;	D. p = ‘0’;
+
+16. 以下选项中符合C语言规范的是（）
+A. char str[] = {“a”, “b”, “c”, “d”, “\0”};
+B. char *str = “I Love China!”;
+C. char str[20]; str = “Hello World”;
+D. char s1[10], s2[10] = “C”; s1 = s2;
+
+17. 若有如下语句：int a, b; scanf(“%d%d”, &a, &b); 以下选项中不能把1赋给变量a，2赋给变量b的是（其中表示空格）（）
+A. 1, 2		B. 123		C. 12		D. 12.3
+
+18. 若有以下说明和定义
+  union data{
+int a; 
+char c;
+double x;
+} dt;
+则下述叙述中错误的是（）
+A. data是一种数据类型
+B. 变量dt所占内存字节数与成员x所占字节数相同
+C. union data是一种数据类型
+D. &dt, &dt.a, &dt.c, &dt.x具有相同的值
+19. 有如下条件表达式 (!flag) ? ‘a’-32 : ‘a’; 下列选项中等价于表达式(!flag)的是（）
+A. (flag == 1)		B. (flag != 1)		C. (flag == 0) 		D. (flag != 0)
+
+20. 有以下程序
+#include <stdio.h>
+int main()
+{  int x = 7;
+   printf(“%d\n”, ++x);
+   return 0;
+}
+程序运行后的输出结果为（）
+A. 7	  	B. 8		C. 9		D. 10
+
+21. 有以下程序
+  #include <stdio.h>
+  int func(char *s){
+      int count = 0, i;
+      for(i=0; *(s+i) != ‘\0’; i++)
+         if(*(s+i) >= ‘0’ && *(s+i) <= ‘9’) count++;
+      return count;
+  }
+  int main(){
+char *str = “1996 is a leap year, and February has 29 days.”
+int n = func(str);
+printf(“%d\n”, n);
+return 0;
+}
+则程序运行后的输出结果是（）
+A. 10		B. 46		C. 6		D. 9
+
+22. 有以下程序（其中表示空格）：
+  #include <stdio.h>
+  void func(int *p, int n){
+      int i, j, k;
+      for(i=1; i<n; i++){
+          int temp = *(p+i);
+          j = i-1;
+          while(j>=0){
+              if(temp >= *(p+j)) break;
+              *(p+j+1) = *(p+j);
+              j--;
+          }
+          *(p+j+1) = temp;
+      }
+  }
+
+  int main(){
+      int a[10] = {1,2,3,4,5,6,7,8,9,0}, i;
+      func(a, 10);
+      for(i=0; i<10; i++) printf(“%d”, a[i]);
+      printf(“\n”);
+      return 0;
+  }
+  上述程序的运行结果为（）
+A. 1234567890		B. 9876543210
+C. 0123456789		D. 0987654321
+23. 有以下程序：
+  #include <stdio.h>
+  char *func(char *s, char c1, char c2){
+      int i;
+      for(i=0; *(s+i) != ‘\0’; i++){
+          if(*(s+i) == c1) *(s+i) = c2;
+      }
+      return s;
+  }
+int main()
+{
+  char s[] = “food”;
+  func(s, ‘o’, ‘e’);
+  puts(s);
+  return 0;
+}
+程序运行后的输出结果是（）。
+A. food		B. foot		C. feed 		D. foed
+
+24. 有以下程序段（其中表示空格）：
+  #include <stdio.h>
+  int func(int a, int b){
+      if(a > b){
+         int t = a; a = b; b = t;
+      }
+      int r = b%a;
+      while( r ){
+          b = a;     a = r;    r = b%a;
+      }
+      return a;
+  }
+  int main()
+  {
+     int m, n, c;
+     scanf(“%d%d”, &m, &n);
+     c = func(m, n);
+     printf(“%d\n”, c);
+     return 0;
+  }
+  若程序运行时输入：86<回车>，则程序运行结果为（）
+A.	8		B. 6		C. 24		D. 2
+ 
+25. 有以下程序
+  void func(char *s, char *ss, int n1, int n2)
+  {
+int i, j;
+for(i=n1, j=0; i<n1+n2 && s[i] != 0; i++, j++)  ss[j] = s[i];
+ss[j] = 0;
+  }
+  int main()
+  {
+     char s1[20]=”I Love China”, s2[20];
+     func(s1, s2, 2, 4);
+     printf(“%s\n”, s2);
+     return 0;
+  }
+以上程序执行后，运行结果是（）
+A. Love China	B. China 		C. Love		D. hina
+
+26. 有以下程序
+#include <stdio.h>
+int length(char *s){
+    int i;
+    for(i = 0; *(s+i) != 0; i++);
+    return i;
+}
+int func(char *s){
+    int len = length(s);
+    int base = 1, count = 0;
+    for(int i = len-1; i >= 0; i--){
+        count += (*(s+i) – ‘0’)*base;
+        base = base * 10;
+    }
+    return count;
+}
+int main()
+{
+char s[10];
+int num;
+gets(s);
+num = func(s);
+printf(“%d\n”, num);
+return 0;
+  }
+程序运行后输入：14570<回车>，则程序运行输出结果的是（）
+A. 17		B. 5 		C. 14570	D. 7541
+
+27. 有以下程序，当程序运行时的输出是（其中表示空格）（）
+  #include <stdio.h>
+  #include <math.h>
+  int func(int x){
+int i, flag = 0, m = sqrt(x);
+for(i = 2; i<=m; i++){
+    if(x%i == 0)break;
+}
+if(i > m) flag = 1;
+return flag;
+  }
+  int main(){
+      int k;
+      for(k = 11; k < 20; k++){
+         if(func(k)) printf(“%d”, k);
+      }
+      printf(“\n”);
+      return 0;
+  }
+A. 11121314151617181920		B. 1113151719
+C. 11131719				D. 12141618
+ 
+28. 有以下程序
+  #include <stdio.h>
+int func(int n)
+  {
+if(n == 1) return 1;
+return 2+func(n-1);
+  }
+  int main()
+  {
+int x = 5;
+x = func(x);
+printf(“%d\n”, x);
+return 0;
+  }
+程序的运行结果是（）
+A. 9	 	B. 19 		C. 25 		D. 无输出
+
+29. 有以下程序（其中表示空格）
+  #include <stdio.h>
+  int func(char *s)
+  {
+int i, word = 0, num = 0;
+char c;
+for(i=0; (c = *(s+i)) != ‘\0’; i++){
+    if(c == ‘’) word = 0;
+    else if(word == 0){
+        word = 1;
+        num++;
+    }
+}
+return num;
+  }
+  int main()
+  {
+char s[] = “Amainmaybedestroyedbutnotdefeated”;
+int num = func(s);
+printf(“%d\n”, num);
+return 0;
+  }
+该程序的运行结果是（）
+A. 43 		B. 10		C. 33		D. 8
+
+30. 以下程序的运行结果是（）
+#include <stdio.h>
+void func(int *n)
+{
+static int m=2;
+*n *= m-1;
+m += 2;
+}
+int main()
+{
+int x=1, i;
+for(i=0; i<3; i++)
+{
+  func(&x);
+}
+printf("%d\n", x);
+return 0;
+}
+A) 8		B) 10		C) 11		D) 15
+
+二、程序填空题（每空2分，共20分）
+1.  以下是判断闰年的函数，请将程序补充完整
+int leap(int  year)
+{
+	int flag = 0;
+	if (year%400 == 0 || (【1】))
+	    【2】      //不允许在此处使用return语句
+	return flag;
+}
+
+2 以下函数是求两个正整数的最小公倍数的函数及其调用，请将程序补充完整；
+int lcm(int x, int y)
+{
+    int i, m = x>y?x:y;
+    for(i = m; 【3】; i++)
+    {
+         if(i%x == 0 && i%y == 0) 
+            【4】
+    }
+    return i;
+  }
+int main()
+{	
+    int m, n;
+    scanf(“%d%d”, &m, &n);
+    int c = 【5】;
+        printf(“%d和%d的最小公倍数是%d\n”, m, n, c);
+    return 0;
+}
+
+3. 向带头结点的链表第i个结点前插入一个新结点的函数如下，请将程序补充完整
+typedef struct node{
+   int data;
+   struct node *next;
+} LNode;
+//h表示链表头结点的指针，num新结点数据域的值
+void insertBefore(LNode *h, int i, int num) 
+{
+	int pos = 1;
+	LNode *p = h->next;
+	LNode *node = (LNode*)malloc(sizeof (LNode));
+	node->data = num;
+	node->next = NULL;
+	while (pos < i - 1 && p){
+		pos++;
+		【6】
+	}
+	if (p->next == NULL){
+		p->next = node;
+	}
+	else{
+		LNode *q = p->next;
+		【7】
+		【8】
+	}
+	return h;
+}
+
+4. 下面函数的功能是：将一个字符串中包含的所有整数（不考虑负数的情况）取出，并返回整数的个数，请将程序补充完整。其中stoi函数实现将一个仅包含数字的字符串转换为十进制整数，其函数原型为：int stoi(char *s);
+int numbers(char *s, int *p) //p为存储所有整数的数组
+{
+  int i, j, k, count=0;
+  for(i=0; s[i] != 0; i++)
+  {
+    if(【9】){
+      char numchars[10];
+      k = 0;
+      for(j = i; s[j] >= '0' && s[j] <= '9'; j++) 
+      {
+           【10】
+           k++;
+      }
+      numchars[k] = 0;
+      p[count++] = stoi(numchars); 
+      i = j;
+    } 
+  }
+  return count;
+}
+三、读程序，写出运行结果（每题5分，共20分）
+1. void Ex3_1(char str[])
+{
+	char *p=str,ch;
+	for (int i = 0; i < strlen(str) / 2; i++)
+	{
+		ch = *(p + i);
+		*(p + i) = *(p + strlen(str) - 1 - i);
+		*(p + strlen(str) - 1 - i) = ch;
+	}
+}
+
+int main()
+{
+	char str[20];
+	printf("In the string:");
+	Ex3_1(str);
+	puts(str);
+	return 0;
+}
+从键盘输入字符串：1234abba1234
+
+2. int Ex3_2(char str[], char ch)
+{
+	int i ,k;
+	for (i = k = 0; str[i] != '\0'; i++)
+		if (str[i] == ch || str[i] == ch + 32 || str[i] == ch - 32)
+			k++;
+	return k;
+}
+int main()
+{
+	char str[20],ch;
+	gets(str);
+	ch=getchar(); 
+	printf("the \’ %c\’:%d",ch,Ex3_2(str,ch));
+	return 0;
+}
+键盘输入：abcdABCDCba<回车>CD<回车>
+
+3. void Ex3_3(char *s1, char *s2,int k)
+{
+	s1 = s1 + k - 1;
+	while(*s2++ = *s1++);
+}
+
+int main()
+{
+	char str1[20]=”ILoveTheCProgram”,str2[20];
+	Ex3_3(str1, str2, 3);
+	puts(str1);
+	puts(str2);
+	return 0;
+}
+
+4. int *Ex3_4(int(*p)[4])
+{
+	int *pt=NULL;
+	for (int i = 0; i < 4;i++)
+	 if (*(*p + i) >= 90) pt = *p;
+	return pt;
+}
+
+int main()
+{
+	int *s=NULL;
+	int a[][4] = { { 76, 83, 87, 65 }, { 88, 92, 77, 53 }, { 98, 72, 83, 60 } };
+	for (int j = 0; j < 3; j++)
+	{
+		s = Ex3_4(a + j);
+		if (s != NULL)
+			printf("%4d%4d%4d%4d\n", *s++, *s++, *s++, *s);
+	}
+	return 0;
+}
+
+四．编程题（每题10分，共20分）
+
+1. 设计一个函数实现如下功能：将一个正整数转换为十六进制表示的字符串，在main函数中输入一个正整数，然后调用该函数，输出函数返回结果。如输入：155，输出9B。参考函数原型如下：char *convert(int x, char *s);
+
+2. 编写一个函数实现如下功能：统计一个字符串中出现不同字符的个数，如字符串“ababc3x”中含有5个不同字符。 建议函数原型如下：
+int count(char *s);
+-----------------------------------------------------------------------------------------------------------------------------------------------
+ //2016年（答案）
+ 一、选择题(1-20每题1分，20-30每题2分，共40分)
+1—5：  BBBCC      6—10：CCDAC 
+11—15：BDACC     16—20：BAACB
+21—25：CCCDC     26—30：CCADD
+二、程序填空题（每空2分，共20分）
+[1]：year%4==0&&year%100!=0;
+[2]: flag = 1;
+[3]: i <= x*y
+[4]: break;
+[5]: lcm(m, n)
+[6]: p = p->next;
+[7]: node->next = q;
+[8]: p->next = node;      注：[7][8]顺序可调
+[9]: s[i] >= '0' && s[i] <= '9'
+[10]: numchars[k] = s[j];
+三、读程序，写出运行结果（每题5分，共20分）
+1：4321abba4321 （将输入的字符串逆转）
+2：the ‘C’:3(统计输入字符串中C字符的个数，不区分大小写)
+3：I Love The C Program
+     Love The C Program
+4： 88  92  77  53
+    98  72  83  60
+四、编程题（每题10分，共20分）
+1. 
+#include <stdio.h>
+char *convert(int x, char *s)
+{
+  int r, i=0, j;
+  while(x){
+    r = x%16;
+    if(r>=10) s[i++] = r-10+'A';
+    else s[i++] = r+'0';
+    x = x/16;
+  }
+  s[i] = 0;
+  for(j=0; j<i/2; j++)
+  {
+    char c = s[j];
+    s[j] = s[i-1-j];
+    s[i-1-j] = c;
+  }
+  return s;
+}
+
+int main()
+{
+  int a;
+  char s[20];
+  scanf("%d", &a);
+  convert(a, s);
+  puts(s);
+  return 0;
+}
+
+2.
+int count(char *s)
+{
+  int i, j, cnt = 0;
+  for(i=0; s[i] != 0; i++)
+  {
+    for(j=0; j<i; j++)
+    {  
+       if(s[j] == s[i]) break;
+    }
+    if(j == i) cnt++;
+  }
+  return cnt;
+}
+-----------------------------------------------------------------------------------------------------------------------------
+//2017年（试卷）
+一、单项选择题(1-20题每题1分，21-30题每题2分，共40分)
+
+1. C语言源程序文件的扩展名是（）
+A) .c 		B) .exe		C) .obj		D) 以上都不对
+
+2. 以下选项中不能作为C程序合法常量的是（）
+A) 123	 	B) ‘\123’ 	C) 1,234		D) “xy\noj”
+
+3. 以下选项可以作为C语言标识符的是（）
+A) int 		B) AT&T		C) _08A8		D) Dota.2
+
+4. 若已有定义语句：int x=15, y=6, z; 并在此后执行语句：z = 0.9 + x/y; 则z的值为（）
+A) 3.4		B) 2.9		C) 3			D) 2
+
+5. 若已有定义语句：int x=15, y=7; float a=13.5, b=17;则下述语句无误的是（）
+A) x=a%b;		B) b=x%y;		C) x=b%y;		D) y=x%b;
+
+6. 下列选项中与语句if(a) a++;等价的是（）
+A) if(a == 1) a++;		B) if(a == 0) a++;		
+C) if(a != 1) a++;		D) if(a != 0) a++;
+
+7. 关于main函数的叙述，下列选项错误的是（）
+A) C语言的程序都是从main函数开始执行的
+B) C语言的源程序文件没有main函数也能编译
+C) C语言中main函数的返回类型为int
+D) C语言的main函数不能有参数
+
+8. 有如下定义：
+struct s{
+int no;
+int age;
+char name[20];
+};
+struct s s1, s2; 若变量s1,s2均已正确赋值，则以下语句中不正确的是（）
+A) s1 = s2;	B) s1.no = s2.no;	C) s1.name = s2.name; 	D) s1.age = s2.age;
+
+9. 当x为大于1的奇数时，下列选项中值为0的表达式为（）
+A) x/2		B) x%2 		C) x%2==1 	D) x%2==0
+
+10. 表达式2.7-5/2+0.7+7%3的值是（）
+A) 1.9		B) 2.9 		C) 2.4 		D) 3.4
+
+11. 要求用while语句实现从键盘上输入一行字符，若变量已正确定义，则下列选项中正确的是（）
+A) while(ch=getchar()==’\n’);		B) while((ch=getchar()) != ‘\n’);
+C) while((ch=getchar()) == ‘\n’);		D) while(ch=getchar()!=’\n’);
+
+12. 下述叙述正确的是（）
+A) continue语句和break语句功能相同
+B) break语句可以用在循环语句和switch语句中
+C) break语句只能用在循环中
+D) 以上说法都不对
+
+13. 判断变量x取值是否在区间(a, b)内的表达式是（）
+A) a<x<b		B) b>x>a		C) x>a, x<b		D) x>a&&x<b
+
+14. 下列选项中值为1的表达式是（）
+A) ‘7’-‘6’		B) 1-‘\0’ 		C) ‘B’-‘A’		D) 以上选项都对
+
+15. 关于数组，以下语句错误的是（）
+A) int a[] = {1,2,3,4}	;		B) int a[3]={1,2,3,4};
+C) int a[3]={1};				D) int a[3][4] = {1,2,3,4,5,6,7};
+
+16. 当整型变量c的值不为1，3，5时，下列选项中的表达式值为“真”的是（）
+A) (c>=1&&c<=5)&&(c%2==1)		B) c==1 || (c==3) || (c==5)
+C) (c>=1&&c<=5)&&!(c%2)			D) (c>=1&&c<=5)||(c!=2) || (c!=4)
+
+17. 以只读的方式打开D盘的二进制文件a.dat，以下语句正确的是（）
+A) fopen(“D:\\a.dat”, “rb”);			B) fopen(“D:\\a.dat”, “rb+”);
+C) fopen(“D:\\a.dat”, “wb”);			D) fopen(“D:\\a.dat”, “wb+”);
+
+18. 将文件位置指针从文件开始位置向后移动10个字节，若变量已正确定义，且文件已打开，以下语句正确的是（）
+A) fseek(fp, -10, SEEK_SET);		B) fseek(fp, 10, SEEK_END);
+C) fseek(fp, 10, SEEK_SET);			D) fseek(fp, 10, SEEK_CUR);
+
+19. 以下选项中关于文件包含的预编译指令使用正确的是（）
+A) #define <stdio.h>			B) #include <stdio.h> 
+C) @include<stdio.h> 			D) #include stdio.h
+
+20. 若有语句：typedef int T[10]; T a; 则下列选项中与上述语句相同的是（）
+A) int a[10]; 		B) int a;		C) int a(10);		D) 以上都不对
+
+21. 已定义整型变量a，下列选项中与语句if(a == 1) a++; else a--;等价的是（）
+A) switch(a){				B) switch(a==1){
+case 1: a++; break;         case 0: a++; break;
+default: a--; break;         default:a--; break;
+  }                        }
+C) switch(a){              D) switch(a==1){
+case : a++; break;          case: a++; break;
+default: a--; default;        default: a--; break;
+  }                        }
+
+22. 若变量已正确定义，有以下程序段：
+i = 0;
+do{
+  printf(“%d, “, i);
+}while(i++);
+printf(“%d\n”, i);
+其输出结果是：
+A) 0, 0		B) 1, 1		C) 0, 1		D) 无限循环
+
+23. 下列程序的运行结果是：
+    #include<stdio.h>
+int sum(int n){
+    if(n==0 || n==1) return n;
+    return n+sum(n-1);
+}
+int main()
+{
+    printf(“%d\n”, sum(5));
+    return 0;
+}
+A) 5			B) 15 		C) 120		D) 0
+
+24. 以下程序的运行结果是：
+    #include<stdio.h>
+int func(char *s, char c){
+    int k=0, i=0;
+    for(i=0; *(s+i) != 0; i++)
+        if(*(s+i) == c) k++;
+    return k;
+}
+int main(){
+  char str[20] = “Code&Program”;
+  int m = func(str, ‘o’);
+  printf(“%d\n”, m);
+  return 0;
+}
+A) 12		B) 1			C) 2 		D)4
+
+25. 以下程序的运行结果是：
+    #include<stdio.h>
+int func(int m, int n){
+    int i;
+    for(i = m<n?m:n; i>1; i--)
+        if(m%i==0 && n%i==0)
+            break;
+    return i;
+}
+int main(){
+    printf(“%d\n”, func(6, 8));
+    return 0;
+}
+A) 6			B) 8			C) 24 		D) 2
+
+26. 以下程序的运行结果是：
+    #include<stdio.h>
+void func(int *p, int n, int x){
+    int i;
+    for(i=n-1; i>=0; i--){
+        if(*(p+i)<=x) break;
+ *(p+i+1) = *(p+i);
+    }
+    *(p+i+1) = x;
+}	
+int main(){
+    int i, a[5] = {1, 3, 5, 7};
+    func(a, 4, 4);
+    for(i=0; i<5; i++)
+        printf(“%d“, a[i]);// 表示空格
+    printf(“\n”);
+    return 0;
+}
+A) 7 5 3 1		B) 1 3 5 7		C) 1 3 4 5 7	D) 7 5 4 3 1
+
+27. 以下程序的运行结果是：
+#include<stdio.h>
+void func(char* s1, char *s2){
+    while((*s1++ = *s2++) != ‘\0’);
+}
+int main(){
+    char str[20]=”Love”, s[20] = “China”;
+    puts(str);
+    return 0;
+}
+A) Love		B) China		C) LoveChina		D) ChinaLove
+
+28. 以下程序的运行结果是：
+#include <stdio.h>
+void func(int *n){
+static int m=1;
+*n *= m;
+m += 2;
+}
+int main(){
+int x=1, i;
+for(i=0; i<3; i++){
+  func(&x);
+}
+printf("%d\n", x);
+return 0;
+}
+A) 8			B) 10		C) 11		D) 15
+
+29. 以下程序的运行结果是：
+#include <stdio.h>
+int func(int n){
+int flag = 0;
+if((n%4==0&&n%100!=0) || n%400==0)
+    flag = 1;
+return flag;
+}
+int main(){
+printf("%d\n", func(2018));
+return 0;
+}
+A) 1			B) 0			C) 2018		D) 程序有错误
+
+30. 以下程序的运行结果是：
+#include <stdio.h>
+int func(int m){
+    int n=0;
+    while(m!=0){
+        n++;
+        m = m/10;
+    }
+    return n;
+}
+int main(){
+    printf(“%d\n”, func(1024));
+    return 0;
+}
+A) 4			B) 3			C) 7			D) 4201
+
+二、填空题（每空2分，共20分）
+1. 以下函数实现的功能是将数字字符组成的字符串转变为相应的十进制数，请将程序补充完整；
+int charToNum(char str[])
+{
+	int sum = 0,k;
+	for (int i = 0;    [1]    ; i++)
+	{
+		k = str[i] - '0';
+		  [2]    ;
+	}
+	  [3]    
+}
+2. 下列函数是利用选择法排序，挑选出前m个最大元素的函数,补充完整
+void sort(int arr[], int n, int m)
+{
+	int i, j, k,t;
+	for (i = 0;  [4]   ; i++)
+	{
+		  [5]   ;
+		for(j = i+1; j < n; j++)
+		   if (  [6]   )
+			   k = j;
+		if (k != i){ t = arr[k]; arr[k] = arr[i]; arr[i] = t; }
+	}
+}
+3. 以下程序是利用指针实现字符串就地逆转，补充完整
+#include<string.h>
+void reverse(char *x)
+{
+	char *p, *s, *t;
+	int len =  strlen(x);
+	int m = 	  [7]   ;
+	s = x;
+    t =    [8]   ;
+p = x + m;
+	for (;     [9]    ;     [10]     )
+	{		char temp = *s; *s = *t, *t = temp; 	}
+}
+
+三、读程序写结果(每题5分，共20分)
+
+1. 写出程序运行结果
+#include<stdio.h>
+void Ex4_1(char hex[], int num, int b)
+{
+	int i = 0, t;
+	while (num != 0)
+	{
+		t = num%b;
+		if (t >= 10)
+			hex[i] = t - 10 + 'A';
+		else
+		    hex[i] = t + '0';
+		i++;
+		num = num / b;
+	}
+	hex[i] = '\0';
+    reverse(hex); //第二题3中的函数
+}
+
+int main()
+{
+	char hex[10];
+	int num1, num2, b1,b2;
+	num1 = 155; b1 = 2; 
+	num2 = 1777; b2 = 16;
+	Ex4_1(hex, num1, b1);	puts(hex);
+	Ex4_1(hex, num2, b2);	puts(hex);
+	return 0;
+}
+
+2. 按格式写出程序运行结果
+#include<stdio.h>
+int Ex4_2(char str[])
+{
+	int num = 0, i, j=0, word = 0;
+	char c,w[20];
+	for (i = 0; (c = str[i]) != '\0'; i++)
+	{
+		if (c == '')	//其中表示空格
+		{  word = 0;
+			w[j] = '\0'; puts(w); j = 0;
+		}
+		else 
+		{	w[j] = c; j++;
+			if (word == 0)
+			{			
+				word = 1; num++;
+			}		
+		}
+	}
+	w[j] = '\0'; puts(w);
+	return num;
+}
+int main()
+{
+	char str[100]="ILoveTheCProgram";
+	int n = Ex4_2(str);
+	printf("%d", n);
+    return 0;
+}
+
+3. 读程序写出运行结果
+#include<stdio.h>
+int Ex4_4(char *s, char ch)
+{
+	int k = 0;
+	while (*s != '\0'&&*s != ch)
+	{
+		k++;
+		s++;
+	}
+	return k;
+}
+
+int main()
+{
+char str[] = "ILoveTheCProgram";
+	char ch='T';
+	int k = Ex4_4(str, ch);
+	puts(str + k);
+	str[k] = '\0';
+	puts(str);
+return 0;
+}
+
+4. 读程序，找出程序中存在的错误后改正，写出正确程序，并给出程序的运行结果
+#include<stdio.h>
+int main()
+{
+/***********以下语句中存在语法错误***********/
+char *s, str[50];
+	str = "I Love The C Program";
+	s = str;
+/***********以下语句中存在逻辑错误***********/
+	while (*s != '\0')
+		if (*s >= 'a'&& *s <= 'z')
+		{	*s = *s - 32;
+		    s++;
+	    }
+	puts(str);
+	return 0;
+}
+
+四、程序设计题（每题10分，共20分）
+1. 设计一个程序实现如下功能：求一个正整数逆序后的整数，并按进制表示输出（0所在项不输出）。
+如：输入11032，则输出：23011=2*10^4+3*10^3+1*10+1
+
+2. 设计一个函数，求一个正整数的因子（包括1和它本身）个数，并得到所有的因子。参考函数原型：int factors(int *p, int num);
+其中num是给定的正整数，整型指针变量p指向用来存储所有因子的数组该函数返回num的因子个数。
+------------------------------------------------------------------------------------------------------------------------------------------------------
+//2017年（答案）
+一、选择题(1-20每题1分，20-30每题2分，共40分)
+1—5：  ACCDB      6—10：DDCDC 
+11—15：BBDDB     16—20：DACBA
+21—25：ACBCD     26—30：CBDBA
+二、程序填空题（每空2分，共20分）
+[1]：i < strlen(str) 或 str[i] != ‘\0’
+[2]: sum=k+sum * 10
+[3]: return sum;
+[4]: i < m-1
+[5]: k = i
+[6]: arr[j] > arr[k]
+[7]: m = (len - 1) / 2;
+[8]: t = x + len - 1
+[9]: s <= p
+[10]: s++, t--
+评分标准：
+——全对给2分；缺分号或多分号也算对；
+——程序读懂了，但是具体值上有偏差，全题适当给1-2分；
+——程序读懂了，顺序上有错误，全题可以适当给1-2分；
+三、读程序，写出运行结果（每题5分，共20分）
+1：10011011		十进制转二进制
+   6F1				十进制转十六进制
+评分：全对给满分；若结果有误，但给出了是进制之间的转换，最多给2分；
+2：I<回车>Love<回车>The<回车>C<回车>Program 		//<回车>表示换行符
+5		//字符串中单词个数
+评分：全对给满分；顺序有误给4分；输出部分单词2分；
+3：TheCProgram
+   ILove
+提示：根据某个字符将字符串分成两部分，并输出；
+评分：全对给满分；输出部分给3分；写出了提示信息给2分；
+4：提示：字符数组名不能直接用字符串常量赋值；逻辑上也有错误；程序目的是将字符串中小写字母变成大写，并输出；
+参考正确程序如下：
+int main()
+{
+char *s, str[50] = "I Love The C Program";
+	//str = "I Love The C Program";
+	s = str;
+	while (*s++ != '\0')
+		if (*s >= 'a'&& *s <= 'z')
+		{	*s = *s - 32;
+		    //s++;
+	    }
+	puts(str);
+	return 0;
+}
+程序运行结果如下：
+I LOVE THE C PROGRAM
+四、编程题（每题10分，共20分）
+1. 
+#include <stdio.h>                     ----------------1分
+int reverse(int num) //整数逆序
+{
+  int result=0;
+  while(num){
+    int k = num%10;
+    result = result*10+k;
+    num /= 10;
+  }
+  return result;
+}                                   ------------------ 4分
+
+void print(int num)
+{
+    int a[15], numbers=0, i;
+    printf("%d=", num);
+    while(num){
+        a[numbers++] = num%10;
+        num /= 10;
+    }
+    printf("%d*10^%d", a[numbers-1], numbers-1);
+    for(i = numbers-2; i>1; i--)
+        if(a[i] != 0) printf("+%d*10^%d", a[i], i);
+    if(a[1] != 0) printf("+%d*10", a[1]);
+    if(a[0] != 0) printf("+%d", a[0]);
+    printf("\n");
+}                                  ------------------ 8分
+
+int main()
+{
+  int num, result;
+  scanf("%d", &num);
+  print(reverse(num));
+  return 0;
+}                                 ------------------ 10分
+2.
+int factors(int *p, int num)  ---------------1分
+{
+   int result = 0, i;        ----------------2分
+   for(i=1; i<= num; i++)
+      if(num % i == 0) p[result++] = i; -----8分
+   return result;              -------------10分
+}
+
+
+
+
